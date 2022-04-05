@@ -1,30 +1,44 @@
 import React from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay} from "swiper";
 import { hash } from '../helpers';
-import CustomProductViewer from "./CustomProductViewer";
-import 'swiper/css';
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+
+import { EffectCoverflow, Autoplay } from "swiper";
+import CustomProductViewer from './CustomProductViewer';
+
 
 
 function Carousel({products}) {
 
   return (
 
-    <section className='px-5 md:px-0 w-screen max-w-[1440px] pt-[70px] pb-20 lg:pb-[130px] mx-auto'>
+    <section className='px-5 md:px-0 w-full max-w-[1440px] pt-[70px] pb-20 lg:pb-[130px] flex flex-col mx-auto'>
 
-      <Swiper
-        spaceBetween={50}
-        speed={1000}
-        autoplay={
-          {
-            delay: 3000,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-            waitForTransition: true
+      <div className='flex w-full'>
+
+        <Swiper 
+
+          
+          
+          loop={true}
+          speed={1000}
+          spaceBetween={50}
+          centeredSlides={true}
+          slidesPerView={"auto"}
+          autoplay={
+            {
+              delay: 3000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+              waitForTransition: true
+            }
           }
-        }
-        modules={[Autoplay]}
-      >
+          modules={[EffectCoverflow,Autoplay]}
+          className = "max-w-max w-full flex items-center"
+        >
+
 
         {
 
@@ -33,8 +47,10 @@ function Carousel({products}) {
             if(Object.entries(item).length > 1){
               return (
                 
-                <SwiperSlide className='max-w-[100%] md:max-w-[50%] lg:max-w-[33%]' key={hash(item.id)}>
-                  <CustomProductViewer product={item}/>
+                <SwiperSlide className=' flex !h-auto justify-center  max-w-full md:max-w-[50%] lg:max-w-[33%]' key={hash(item.id)}>
+                  {
+                    (<CustomProductViewer product={item}/>)
+                  }
                 </SwiperSlide>
                 
               )
@@ -47,6 +63,7 @@ function Carousel({products}) {
         }
         
       </Swiper>
+      </div>
 
     </section>
 
