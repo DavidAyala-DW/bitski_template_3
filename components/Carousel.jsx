@@ -14,8 +14,16 @@ function Carousel({products}) {
 
       <Swiper
         spaceBetween={50}
-        loop={true}
         speed={1000}
+        autoplay={
+          {
+            delay: 3000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+            waitForTransition: true
+          }
+        }
+        modules={[Autoplay]}
       >
 
         {
