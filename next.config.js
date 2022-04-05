@@ -1,6 +1,4 @@
-/** @type {import('next').NextConfig} */
-
-const nextConfig = {
+module.exports = {
   reactStrictMode: true,
   images: {
     layoutRaw: true,
@@ -30,7 +28,5 @@ const nextConfig = {
     });
 
     return config;
-  }
+  },
 }
-
-module.exports = nextConfig

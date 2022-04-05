@@ -3,6 +3,11 @@ const standardModeColors = {
   light: "black"
 }
 
+const standardOriginalColors = {
+  dark: "black",
+  light: "white"
+}
+
 const primaryColor = {
 
   Brand : "#FF3567",
@@ -40,10 +45,12 @@ const secondaryColor = {
 export const assignColors = () => {
 
   const currentStandardMode = standardModeColors[process.env.NEXT_PUBLIC_STANDARD_MODE.replaceAll('"',"")] ?? "white";
+  const currentStandardOriginal = standardOriginalColors[process.env.NEXT_PUBLIC_STANDARD_MODE.replaceAll('"',"")] ?? "black";
   const currentPrimaryColor = primaryColor[process.env.NEXT_PUBLIC_PRIMARY_COLOR.replaceAll('"',"")] ?? (process.env.NEXT_PUBLIC_PRIMARY_COLOR != "" ? process.env.NEXT_PUBLIC_PRIMARY_COLOR : "white");
   const currentSecondaryColor = secondaryColor[process.env.NEXT_PUBLIC_SECONDARY_COLOR.replaceAll('"',"")] ?? (process.env.NEXT_PUBLIC_SECONDARY_COLOR != "" ? process.env.NEXT_PUBLIC_SECONDARY_COLOR : "rgba(255, 255, 255, 0.25)");
 
   document.documentElement.style.setProperty('--standard-mode', currentStandardMode );
+  document.documentElement.style.setProperty('--standard-original', currentStandardOriginal );
   document.documentElement.style.setProperty('--color-primary', currentPrimaryColor );
   document.documentElement.style.setProperty('--color-secondary', currentSecondaryColor );
 

@@ -1,6 +1,8 @@
 :root{
   --color-primary: ""
   --color-secondary: ""
+  --standard-mode:""
+  --standard-original:""
 }
 
 @tailwind base;
@@ -34,7 +36,16 @@ body {
 .buttonShape{
   border-radius: buttonShape();
 }
+.bg-NavBar{
+  background-color: standardModeBG();
+}
 
+.bg_contact_footer{
+  background-color: bg_contact();
+}
+.filter_logo_footer{
+  filter: filterLogoBitski_footer();
+}
 
 h1,h2,h3,h4,h5{
   font-family: $headlineFontLocal;

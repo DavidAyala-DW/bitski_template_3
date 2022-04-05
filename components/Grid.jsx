@@ -153,124 +153,135 @@ const Grid = ({ products}) => {
   
   return (
 
-    <>
-      <section id="grid" className="px-5 md:px-20 max-w-[1440px] mx-auto w-full my-10">
-        
-          <div className="flex-col space-y-5 max-w-[1440px] mx-auto w-full hidden">
-
-            <h2>Filter Collection</h2>
-
-            <div className="flex w-full">
-
-              <div className="w-full max-w-3xl grid grid-cols-2 gap-5 place-items-center md:grid-cols-4 lg:grid-cols-6">
-
-                {
-                  activeFirstProducts && (
-
-                    filters.map((filter,index) => (
-
-                      <div 
-                        key={index}
-                        className="p-5 min-w-[118px] cursor-pointer min-h-[118px] max-h-max max-w-max flex flex-col items-center justify-center bg-[#DBDBDB]"
-                        onClick={handleClickFilter}
-                        id={filter.value}
-                      >
+    <section id="grid" className="pt-[70px] pb-[130px] px-5 md:px-20 max-w-[1440px] mx-auto w-full">
       
-                        <p
-                          className="cursor-pointer text-xs font-medium"
-                          onClick={handleClickFilter}
-                          id={filter.value}
-                        >
-                          {filter.text}
-                        </p>
-      
-                      </div>
-      
-                    ))
+      <div className="flex-col space-y-5 max-w-[1440px] mx-auto w-full hidden">
 
-                  )
+        <h2>Filter Collection</h2>
 
-                }
+        <div className="flex w-full">
 
-              </div>
+          <div className="w-full max-w-3xl grid grid-cols-2 gap-5 place-items-center md:grid-cols-4 lg:grid-cols-6">
 
-            </div>
+            {
+              activeFirstProducts && (
+
+                filters.map((filter,index) => (
+
+                  <div 
+                    key={index}
+                    className="p-5 min-w-[118px] cursor-pointer min-h-[118px] max-h-max max-w-max flex flex-col items-center justify-center bg-[#DBDBDB]"
+                    onClick={handleClickFilter}
+                    id={filter.value}
+                  >
+  
+                    <p
+                      className="cursor-pointer text-xs font-medium"
+                      onClick={handleClickFilter}
+                      id={filter.value}
+                    >
+                      {filter.text}
+                    </p>
+  
+                  </div>
+  
+                ))
+
+              )
+
+            }
 
           </div>
-          
-          {
-            productListActive && (
-              <div className="container mx-auto w-full flex flex-col space-y-8 md:space-y-0 md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:gap-8">
 
-                {
+        </div>
 
-                  productList.map((item) => (
+      </div>
+      
+      {
+        productListActive && (
+
+          <div className="container mx-auto w-full flex flex-col space-y-8 md:space-y-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8">
+
+            {
+
+              productList.map((item) => {
+
+                if(Object.entries(item).length > 1){
+                  return (
                     <CustomProductViewer product={item} key={hash(item.id)}/>
-                  ))
-
-                }
-
-              </div>
-            )
-          }
-
-          {
-
-            (spinnerActive) && (
-
-              <div className="sk-cube-grid mx-auto my-5">
-                <div className="sk-cube sk-cube1"></div>
-                <div className="sk-cube sk-cube2"></div>
-                <div className="sk-cube sk-cube3"></div>
-                <div className="sk-cube sk-cube4"></div>
-                <div className="sk-cube sk-cube5"></div>
-                <div className="sk-cube sk-cube6"></div>
-                <div className="sk-cube sk-cube7"></div>
-                <div className="sk-cube sk-cube8"></div>
-                <div className="sk-cube sk-cube9"></div>
-              </div>
-
-            )
-
-          }
-
-          {
-            productListActive && (
-              <div className="flex flex-col space-y-5 items-center max-w-[151px] mx-auto my-5 w-full">
-
-                <div className="flex flex-col items-start w-full space-y-1">
-        
-                  <p className="text-[10px] font-normal text-center">
-                    {`SHOWIMG ${productList.length} OF ${totalProducts} PRODUCTS`}
-                  </p>
-
-                  <div className="h-max w-full bg-transparent border border-standard ">
-                    <div id="progressbar" className="h-1 w-[12%] bg-standard"></div>
-                  </div>
-        
-                </div>
-        
-                {
-                  loadMorePages && (
-        
-                    <button
-                    className="bg-primary font-light buttonShape text-[11px] text-secondary px-6 py-2.5 text-center"
-                    onClick={handleClickPagination}
-                    >
-                      LOAD MORE
-                    </button>
-        
                   )
+                }else{
+                  console.log(`The id ${item.id} doesn't exists or is wrong`);
                 }
-        
-              </div>
 
-            )
-          }
+              })
 
-        </section>
-        
-    </>
+            }
+
+          </div>
+
+        )
+      }
+
+      {
+
+        (spinnerActive) && (
+
+          <div className="sk-cube-grid mx-auto my-5">
+            <div className="sk-cube sk-cube1"></div>
+            <div className="sk-cube sk-cube2"></div>
+            <div className="sk-cube sk-cube3"></div>
+            <div className="sk-cube sk-cube4"></div>
+            <div className="sk-cube sk-cube5"></div>
+            <div className="sk-cube sk-cube6"></div>
+            <div className="sk-cube sk-cube7"></div>
+            <div className="sk-cube sk-cube8"></div>
+            <div className="sk-cube sk-cube9"></div>
+          </div>
+
+        )
+
+      }
+
+      {
+
+        // productListActive && (
+        //   <div className="flex flex-col space-y-5 items-center max-w-[151px] mx-auto my-5 w-full">
+
+        //     <div className="flex flex-col items-start w-full space-y-1">
+    
+        //       <p className="text-[10px] font-normal text-center">
+        //         {`SHOWIMG ${productList.length} OF ${totalProducts} PRODUCTS`}
+        //       </p>
+
+        //       <div className="h-max w-full bg-transparent border border-standard ">
+        //         <div id="progressbar" className="h-1 w-[12%] bg-standard"></div>
+        //       </div>
+    
+        //     </div>
+    
+        //     {
+        //       loadMorePages && (
+    
+        //         <button
+        //         className="bg-primary font-light buttonShape text-[11px] text-secondary px-6 py-2.5 text-center"
+        //         onClick={handleClickPagination}
+        //         >
+        //           LOAD MORE
+        //         </button>
+    
+        //       )
+        //     }
+    
+        //   </div>
+
+        // )
+
+      }
+
+    </section>
+      
+    
     
   );
 };

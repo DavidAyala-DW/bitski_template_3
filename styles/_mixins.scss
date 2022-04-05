@@ -186,10 +186,6 @@
 
 }
 
-@function changePrimaryColor(){
-  @return blue;
-}
-
 @function standardModeBG(){
 
   @if $standardMode == "dark"   {
@@ -256,6 +252,20 @@
 
 }
 
+@function filterLogoBitski_footer(){
+  
+  @if $standardMode == "dark" {
+    @return invert(0);
+  }
+
+  @if $standardMode == "light" {
+    @return invert(1);
+  }
+
+  @return invert(1);
+
+}
+
 @function liveActionColor(){
 
   @if --color-primary != "white" and --color-primary != "#FFFFFF" and --color-primary != "#000000" and --color-primary != "black" {
@@ -273,13 +283,29 @@
   }
 
   @if $buttonShape == "smooth" {
-    @return 9px;
+    @return 4px;
   }
 
   @if $buttonShape == "full" {
-    @return 49px;
+    @return 25px;
   }
 
   @return 0px;
+
+}
+
+
+@function bg_contact(){
+
+  @if $standardMode == "dark" {
+    @return white;
+  }
+
+  @if $standardMode == "light" {
+    @return #1A1A1A;
+    
+  }
+
+  @return white;
 
 }

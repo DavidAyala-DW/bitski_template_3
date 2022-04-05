@@ -1,12 +1,20 @@
 import React from 'react'
+import CustomProductViewer from './CustomProductViewer';
 
-function Main() {
+const topText = process.env.NEXT_PUBLIC_MAIN_TOP_TEXT ?? "";
+const headline = process.env.NEXT_PUBLIC_MAIN_HEADLINE ?? "";
+const description = process.env.NEXT_PUBLIC_MAIN_DESCRIPTION ?? "";
+
+function Main({featuredProduct}) {
   return (
-    <div className='min-h-[300px] flex flex-col justify-center items-center'>
-      <h2 className='text-4xl md:text-7xl'>
-        Main Content
-      </h2> 
-    </div>
+
+    <section className='w-full max-w-[1440px] px-5 md:px-20 mx-auto h-full flex flex-col justify-center items-center'>
+
+      <div className='max-w-[608px] mx-auto w-full'>
+        <CustomProductViewer product={featuredProduct} />
+      </div>
+
+    </section>
   )
 }
 

@@ -1,3 +1,3 @@
 export * from "./assignColors";
 export * from "./generateHash";
-export * from "./arraySocialMedia"
+export * from "./arraySocialMedia";

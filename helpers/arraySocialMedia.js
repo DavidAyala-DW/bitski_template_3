@@ -35,4 +35,4 @@ export const arraySocialMedia = [
     URL: process.env.NEXT_PUBLIC_REDDIT_LINK
   }
 
-] 
+]
