@@ -108,7 +108,7 @@ const Hero = () => {
           {
             isLoadImage && (
               
-              <div className="mb-10 w-full flex justify-center">
+              <div className="mb-10 max-w-[150px] w-full flex justify-center">
 
                 <Image
                   src={logoFileName}

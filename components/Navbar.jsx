@@ -76,7 +76,7 @@ const Navbar = () => {
           {
               isLoadImage && (
                 
-                <div className="w-max">
+                <div className="w-max max-w-[90px]">
 
                   <Image
                     src={logoFileName}
