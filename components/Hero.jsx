@@ -73,7 +73,7 @@ const Hero = () => {
   return (
     <>
 
-      <section className="md:h-[520px] w-full mx-auto flex flex-col justify-center items-center max-w-[2500px] px-5 md:px-20 relative pb-20  overflow-hidden">
+      <section className="md:h-[520px] w-full mx-auto flex flex-col justify-center items-center max-w-[1440px] px-5 md:px-20 relative pb-20  overflow-hidden">
 
         <div className="absolute inset-0 w-full h-full max-h-full">
     
@@ -106,7 +106,7 @@ const Hero = () => {
 
         </div>
 
-        <div className="md:absolute inset-0 w-full h-full items-center flex flex-col justify-start pt-[120px] z-20">
+        <div className="md:absolute inset-0 w-full h-full items-center flex flex-col justify-start pt-12 lg:pt-[120px] z-20">
           {
             isLoadImage && (
               
