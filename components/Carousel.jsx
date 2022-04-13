@@ -17,7 +17,7 @@ function Carousel() {
 
   return (
 
-    <section className='px-0 w-full h-full max-w-[1440px] py-10 md:pt-[70px] md:pb-20 lg:pb-[140px] flex flex-col mx-auto'>
+    <section className='px-0 w-full h-full py-10 md:pt-[70px] md:pb-20 lg:pb-[140px] flex flex-col mx-auto'>
 
       <div className='flex h-full w-full'>
 
