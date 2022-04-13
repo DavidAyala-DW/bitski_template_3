@@ -29,7 +29,7 @@ const Home = ({featuredProduct,products}) => {
 
       <About/>
       
-      <Carousel  products={products}/>
+      <Carousel/>
 
       <Contact />
       
@@ -113,11 +113,10 @@ export const getServerSideProps = async () => {
     
   }
 
-  const [featured_product,products] = await Promise.all([featuredProduct(),specificProducts()]);
+  const [featured_product] = await Promise.all([featuredProduct()]);
   return {
     props: {
-      featuredProduct: featured_product,
-      products
+      featuredProduct: featured_product
     },
   };
 

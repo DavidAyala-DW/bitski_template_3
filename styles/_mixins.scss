@@ -287,7 +287,7 @@
   }
 
   @if $buttonShape == "full" {
-    @return 25px;
+    @return 80px;
   }
 
   @return 0px;

@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import Image from "next/image";
-import HeroGrid from "../public/hero_grid.svg";
+import HeroGridDesktop from "../public/hero_grid.svg";
+import HeroGridMobile from "../public/footer_grid.svg";
 
 
 const title = process.env.NEXT_PUBLIC_HERO_TITLE ?? "";
@@ -18,6 +19,7 @@ const Hero = () => {
   const [height, setHeight] = useState(0);
   const [width, setWidth] = useState(0);
   const [isLoadImage, setIsLoadImage] = useState(false);
+  const [viewportDesktop, setViewPortDesktop] = useState(false);
 
   useEffect(() => {
 
@@ -34,20 +36,69 @@ const Hero = () => {
       
     }
 
+    if(typeof window !== "undefined"){
+      if(window.innerWidth > 768){
+        setViewPortDesktop(true);
+      }else{
+        setViewPortDesktop(false);
+      }
+    }
+
+  }, []);
+
+  useEffect(() => {
+
+    if(typeof window !== "undefined"){
+
+      function handleResize(){
+
+        console.log("XD");
+
+        if(window.innerWidth > 768){
+          setViewPortDesktop(true);
+        }else{
+          setViewPortDesktop(false);
+        }
+
+      }
+
+      window.addEventListener("resize",handleResize);
+
+      return window.removeEventListener("resize",handleResize,true);
+
+    }
+
   }, []);
 
   return (
     <>
 
-      <section className="md:h-[520px] w-full mx-auto flex flex-col justify-center items-center max-w-[2500px] px-5 md:px-20 relative pb-20">
+      <section className="md:h-[520px] w-full mx-auto flex flex-col justify-center items-center max-w-[2500px] px-5 md:px-20 relative pb-20  overflow-hidden">
 
         <div className="absolute inset-0 w-full h-full max-h-full">
     
           <div className="relative w-full h-full max-h-full">
 
-          <div className="absolute top-0 right-0 w-max h-max ml-auto">  
+          <div className="absolute top-0 right-0 w-max h-max md:ml-auto transition translate-x-[70%] md:translate-x-0 md:translate-y-[-15px]">  
 
-            <HeroGrid className="stroke-primary w-full h-max opacity-30" />
+            {
+
+              !viewportDesktop && (
+                <HeroGridMobile className="stroke-primary w-full !h-max opacity-30" />
+              )
+              
+            }
+
+            {
+              
+              viewportDesktop && (
+                <HeroGridDesktop className="stroke-primary w-full !h-max opacity-30" />
+                // <FooterGrid className="stroke-primary w-full !h-max opacity-30" />
+              )
+              
+            }
+
+            
 
           </div>
 
@@ -55,7 +106,7 @@ const Hero = () => {
 
         </div>
 
-        <div className="md:absolute inset-0 w-full h-full items-center flex flex-col justify-start pt-[102px] z-20">
+        <div className="md:absolute inset-0 w-full h-full items-center flex flex-col justify-start pt-[120px] z-20">
           {
             isLoadImage && (
               
