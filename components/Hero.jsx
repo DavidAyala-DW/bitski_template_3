@@ -52,8 +52,6 @@ const Hero = () => {
 
       function handleResize(){
 
-        console.log("XD");
-
         if(window.innerWidth > 768){
           setViewPortDesktop(true);
         }else{
