@@ -40,7 +40,7 @@ const Navbar = () => {
 
     <>
 
-      <nav className="fixed z-40 md:absolute top-0 md:z-10 bg-transparent w-full h-[76px] flex flex-col justify-center items-center">
+      <nav className="fixed z-40 md:absolute top-0 bg-transparent w-full pt-5 lg:pt-0 h-auto lg:h-[76px] flex flex-col justify-center items-center">
 
         <div className="max-w-[1440px] w-full px-5 md:px-20 flex items-center md:justify-end">
 
@@ -50,7 +50,9 @@ const Navbar = () => {
 
               <a 
                   href={process.env.NEXT_PUBLIC_NAVBAR_WALLET_LINK} 
-                  className="px-6 bg-primary py-2.5 text-center uppercase text-secondary buttonShape text-[11px] font-medium"
+                  className="px-6 transition hover:scale-105 cursor-pointer bg-primary py-2.5 text-center uppercase text-secondary buttonShape text-[11px] font-medium"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   {process.env.NEXT_PUBLIC_NAVBAR_WALLET_TEXT}
               </a>
@@ -74,7 +76,7 @@ const Navbar = () => {
           {
               isLoadImage && (
                 
-                <div className="w-max">
+                <div className="w-max max-w-[90px]">
 
                   <Image
                     src={logoFileName}
@@ -97,6 +99,8 @@ const Navbar = () => {
         <a 
           href={process.env.NEXT_PUBLIC_NAVBAR_WALLET_LINK} 
           className="px-5 text-standard leading-[32px] text-[32px] font-medium"
+          target="_blank"
+          rel="noopener noreferrer"
         >
             {process.env.NEXT_PUBLIC_NAVBAR_WALLET_TEXT}
         </a>

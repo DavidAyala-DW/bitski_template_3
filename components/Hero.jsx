@@ -52,8 +52,6 @@ const Hero = () => {
 
       function handleResize(){
 
-        console.log("XD");
-
         if(window.innerWidth > 768){
           setViewPortDesktop(true);
         }else{
@@ -73,7 +71,7 @@ const Hero = () => {
   return (
     <>
 
-      <section className="md:h-[520px] w-full mx-auto flex flex-col justify-center items-center max-w-[2500px] px-5 md:px-20 relative pb-20  overflow-hidden">
+      <section className="md:h-[520px] w-full mx-auto flex flex-col justify-center items-center max-w-[1440px] px-5 md:px-20 relative pb-20  overflow-hidden">
 
         <div className="absolute inset-0 w-full h-full max-h-full">
     
@@ -106,11 +104,11 @@ const Hero = () => {
 
         </div>
 
-        <div className="md:absolute inset-0 w-full h-full items-center flex flex-col justify-start pt-[120px] z-20">
+        <div className="md:absolute inset-0 w-full h-full items-center flex flex-col justify-start pt-12 lg:pt-[120px] z-20">
           {
             isLoadImage && (
               
-              <div className="mb-10 w-full flex justify-center">
+              <div className="mb-10 max-w-[150px] w-full flex justify-center">
 
                 <Image
                   src={logoFileName}
@@ -124,7 +122,7 @@ const Hero = () => {
 
             )
           }
-            <h1 className="max-w-[673px] px-1 md:px-0 w-full text-5xl md:text-[51px] text-center mb-7">
+            <h1 className="max-w-[673px] font-extrabold px-1 md:px-0 w-full text-5xl md:text-[51px] text-center mb-7">
               {title}
             </h1>
 

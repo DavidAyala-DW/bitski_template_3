@@ -17,9 +17,9 @@ function Carousel() {
 
   return (
 
-    <section className='px-0 w-full max-w-[1440px] py-10 md:pt-[70px] md:pb-20 lg:pb-[140px] flex flex-col mx-auto'>
+    <section className='px-0 w-full h-full max-w-[1440px] py-10 md:pt-[70px] md:pb-20 lg:pb-[140px] flex flex-col mx-auto'>
 
-      <div className='flex w-full'>
+      <div className='flex h-full w-full'>
 
         <Swiper 
                   
@@ -58,7 +58,7 @@ function Carousel() {
 
           }}
           modules={[EffectCoverflow,Autoplay]}
-          className = "max-w-max w-full flex items-center"
+          className = "w-full flex items-center"
         >
 
           {
@@ -66,6 +66,20 @@ function Carousel() {
             arrayImages.map((item) => {
               
               if(item.length > 0){
+                
+                if (!String.prototype.replaceAll) {
+                  String.prototype.replaceAll = function(str, newStr){
+                
+                    // If a regex pattern
+                    if (Object.prototype.toString.call(str).toLowerCase() === '[object regexp]') {
+                      return this.replace(str, newStr);
+                    }
+                
+                    // If a string
+                    return this.replace(new RegExp(str, 'g'), newStr);
+                
+                  };
+                }
 
                 if (!String.prototype.replaceAll) {
                   String.prototype.replaceAll = function(str, newStr){
@@ -85,19 +99,28 @@ function Carousel() {
 
                 return (
                   
-                  <SwiperSlide className='flex !h-auto justify-center max-w-[343px] md:max-w-[400px]' key={hash(image)}>
+                  <SwiperSlide className='flex w-full flex-col h-full justify-center max-w-[343px] md:max-w-[400px]' key={hash(image)}>
                     {
                       (
+                        <div className='w-full h-full relative pb-[calc(100%*1)] max-h-[400px]' >
 
-                        <div className="relative w-[400px] h-[400px]" data-src={item}>
-                          <Image
-                            className="select-none object-cover h-full w-full object-center rounded-[32px]"
-                            src={"/"+image}
-                            alt={item}
-                            layout={"fill"}
-                          />
+                          <div className="absolute inset-0 w-full flex flex-col justify-center items-center">
+
+                            <div className="h-full w-full" data-src={item}>
+                              <Image
+                                className="select-none object-cover h-full w-full object-center rounded-[32px]"
+                                src={"/"+image}
+                                alt={item}
+                                width={400}
+                                height={400}
+                                layout="responsive"
+
+                              />
+                            </div>
+
+                          </div>
+
                         </div>
-
                         // <CustomProductViewer product={item}/>
                       )
                     }
