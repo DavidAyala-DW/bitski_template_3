@@ -15,14 +15,14 @@ function Contact() {
 
   return (
 
-    <section className='pb-10 lg:pb-[170px] mx-auto w-full h-full lg:min-h-full relative overflow-hidden flex flex-col items-center bg-standardO '>
+    <section className='px-5 md:px-0 pb-10 lg:pb-[170px] mx-auto w-full h-full lg:min-h-full relative overflow-hidden flex flex-col items-center bg-standardO '>
 
       <div className="max-w-[1440px] w-full h-full mx-auto flex flex-col items-center">
 
 
         <div className="flex flex-col items-center text-standard">
 
-          <div className="w-full flex max-w-max mx-auto items-center space-x-[45px]">
+          <div className="w-full flex max-w-max mx-auto items-center space-x-9 md:space-x-[45px]">
 
             { arraySocialMedia.map( (child,index) => {
 
@@ -33,7 +33,7 @@ function Contact() {
                 return(
 
                   <a className="block" rel="noreferrer" target={"_blank"} href={URL} key={index}>
-                    <Icon className="fill-standard" />
+                    <Icon className="fill-primary" />
                   </a>
                   
                 )
