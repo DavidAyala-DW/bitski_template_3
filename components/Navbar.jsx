@@ -40,7 +40,7 @@ const Navbar = () => {
 
     <>
 
-      <nav className="absolute z-40 md:absolute top-0 bg-transparent w-full pt-5 lg:pt-0 h-auto lg:h-[76px] flex flex-col justify-center items-center">
+      <nav className="fixed z-40 md:absolute top-0 bg-transparent w-full pt-5 lg:pt-0 h-auto lg:h-[76px] flex flex-col justify-center items-center">
 
         <div className="max-w-[1440px] w-full px-5 md:px-20 flex items-center md:justify-end">
 
@@ -71,12 +71,12 @@ const Navbar = () => {
 
       <div className={`fixed flex flex-col md:hidden top-0 z-50 h-screen bg-red w-screen bg-black transition ${menuOpen ? "translate-x-0" : "translate-x-full" } `}>
 
-        <div className="pt-6 mb-20 px-5 w-full flex items-center justify-between">
+        <div className="pt-6 mb-[70px] px-5 w-full flex items-center justify-between">
 
           {
               isLoadImage && (
                 
-                <div className="w-max">
+                <div className="w-max max-w-[90px]">
 
                   <Image
                     src={logoFileName}

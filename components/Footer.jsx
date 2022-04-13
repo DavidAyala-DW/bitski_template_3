@@ -11,9 +11,9 @@ const Footer = () => {
 
         <p className="uppercase text-[11px] font-medium">Powered By</p>
 
-        <div>
+        <a className="block" href="https://www.bitski.com/" target="_blank" rel="noopener noreferrer">
           <Bitski className="filter_logo_footer" />
-        </div>
+        </a>
 
       </footer>
 

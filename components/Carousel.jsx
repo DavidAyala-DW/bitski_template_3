@@ -17,7 +17,7 @@ function Carousel() {
 
   return (
 
-    <section className='px-0 w-full h-full max-w-[1440px] py-10 md:pt-[70px] md:pb-20 lg:pb-[140px] flex flex-col mx-auto'>
+    <section className='px-0 w-full h-full py-10 md:pt-[70px] md:pb-20 lg:pb-[140px] flex flex-col mx-auto'>
 
       <div className='flex h-full w-full'>
 
@@ -67,6 +67,20 @@ function Carousel() {
               
               if(item.length > 0){
                 
+                if (!String.prototype.replaceAll) {
+                  String.prototype.replaceAll = function(str, newStr){
+                
+                    // If a regex pattern
+                    if (Object.prototype.toString.call(str).toLowerCase() === '[object regexp]') {
+                      return this.replace(str, newStr);
+                    }
+                
+                    // If a string
+                    return this.replace(new RegExp(str, 'g'), newStr);
+                
+                  };
+                }
+
                 if (!String.prototype.replaceAll) {
                   String.prototype.replaceAll = function(str, newStr){
                 
