@@ -40,7 +40,7 @@ const Navbar = () => {
 
     <>
 
-      <nav className="absolute z-40 md:absolute top-0 bg-transparent w-full pt-5 lg:pt-0 h-auto lg:h-[76px] flex flex-col justify-center items-center">
+      <nav className="fixed z-40 md:absolute top-0 bg-transparent w-full pt-5 lg:pt-0 h-auto lg:h-[76px] flex flex-col justify-center items-center">
 
         <div className="max-w-[1440px] w-full px-5 md:px-20 flex items-center md:justify-end">
 
