@@ -122,7 +122,7 @@ const Hero = () => {
 
             )
           }
-            <h1 className="max-w-[673px] px-1 md:px-0 w-full text-5xl md:text-[51px] text-center mb-7">
+            <h1 className="max-w-[673px] font-extrabold px-1 md:px-0 w-full text-5xl md:text-[51px] text-center mb-7">
               {title}
             </h1>
 
