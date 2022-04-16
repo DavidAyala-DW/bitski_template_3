@@ -114,6 +114,7 @@ function Carousel() {
                                 width={400}
                                 height={400}
                                 layout="responsive"
+                                priority={true}
 
                               />
                             </div>
