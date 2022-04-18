@@ -105,23 +105,29 @@ const Hero = () => {
         </div>
 
         <div className="md:absolute inset-0 w-full h-full items-center flex flex-col justify-start pt-16 lg:pt-[120px] z-20">
-          {
-            isLoadImage && (
-              
-              <div className="mb-10 max-w-[150px] w-full flex justify-center">
 
-                <Image
-                  src={logoFileName}
-                  priority={true}
-                  alt={logoFileName.replace("/","")}
-                  width={width}
-                  height={height}
-                />  
+          <div className="w-full flex mb-10 min-h-[58.8px] justify-center ">
 
-              </div>
+            {
+              isLoadImage && (
+                
+                <div className="max-w-[150px] w-full">
 
-            )
-          }
+                  <Image
+                    src={logoFileName}
+                    priority={true}
+                    alt={logoFileName.replace("/","")}
+                    width={width}
+                    height={height}
+                  />  
+
+                </div>
+
+              )
+            }
+            
+          </div>
+
             <h1 className="max-w-[673px] font-extrabold px-1 md:px-0 w-full text-5xl md:text-[51px] text-center mb-7">
               {title}
             </h1>
