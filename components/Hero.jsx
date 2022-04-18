@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import Image from "next/image";
-import HeroGridDesktop from "../public/hero_grid.svg";
+import HeroGridDesktop from "../public/Vector (15).svg";
 import HeroGridMobile from "../public/grid_footer.svg";
 
 
@@ -71,18 +71,18 @@ const Hero = () => {
   return (
     <>
 
-      <section className="md:h-[520px] w-full mx-auto flex flex-col justify-center items-center  px-5 md:px-20 relative pb-20">
+      <section className="md:h-[432px] lg:h-[520px] w-full mx-auto flex flex-col justify-center items-center  px-4 md:px-20 relative pb-20 md:pb-0 lg:pb-20">
 
         <div className="absolute inset-0 w-full h-full max-h-full">
     
-          <div className="relative w-full h-full max-h-full">
+          <div className="relative w-full h-full max-h-full  md:max-w-[536px] lg:max-w-[770px] ml-auto">
 
-          <div className="absolute top-0 right-0 w-max h-max ml-auto md:ml-auto transition md:translate-y-[-15px]">  
+          <div className="absolute top-0 right-0 w-full h-max ml-auto md:ml-auto md:h-[95%] lg:h-full transition md:translate-y-[-15px]">  
 
             {
 
               !viewportDesktop && (
-                <HeroGridMobile className="stroke-primary w-full !h-max opacity-20" />
+                <HeroGridMobile className="stroke-primary w-full  !h-max opacity-20" />
               )
               
             }
@@ -90,7 +90,7 @@ const Hero = () => {
             {
               
               viewportDesktop && (
-                <HeroGridDesktop className="stroke-primary w-full !h-max opacity-30" />
+                <HeroGridDesktop className="stroke-primary w-full !h-max md:max-h-[453px] lg:max-h-[auto]" />
                 // <FooterGrid className="stroke-primary w-full !h-max opacity-30" />
               )
 
@@ -104,7 +104,7 @@ const Hero = () => {
 
         </div>
 
-        <div className="md:absolute inset-0 w-full h-full items-center flex flex-col justify-start pt-16 lg:pt-[119px] z-20">
+        <div className="md:absolute inset-0 w-full h-full items-center flex flex-col md:justify-end lg:justify-start pt-16 md:pb-[46px] lg:pb-0 lg:pt-[119px] z-20">
 
           <div className="w-full flex mb-10 min-h-[58.8px] justify-center ">
 

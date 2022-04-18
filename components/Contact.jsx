@@ -13,7 +13,7 @@ function Contact() {
 
   return (
 
-    <section className='px-5 md:px-0 pt-2 pb-10 lg:pb-[180px] mx-auto w-full h-full lg:min-h-full relative overflow-hidden flex flex-col items-center bg-standardO '>
+    <section className='px-4 md:px-0 pt-2 pb-10 lg:pb-[180px] mx-auto w-full h-full lg:min-h-full relative overflow-hidden flex flex-col items-center bg-standardO '>
 
       <div className="max-w-[1440px] w-full h-full mx-auto flex flex-col items-center">
 

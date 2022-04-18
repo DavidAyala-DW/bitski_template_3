@@ -6,7 +6,7 @@ const description = process.env.NEXT_PUBLIC_ABOUT_DESCRIPTION ?? "";
 function About() {
   return (
 
-    <section className='max-w-[1440px] px-5 md:px-20 mx-auto h-full flex flex-col items-center pt-20 md:pt-[140px]'>
+    <section className='max-w-[1440px] px-4 md:px-20 mx-auto h-full flex flex-col items-center pt-20 md:pt-[140px]'>
 
       <h3 className='text-center font-black text-[32px] md:text-[52px] leading-[52px] mb-4 md:mb-6'>
         {title}
