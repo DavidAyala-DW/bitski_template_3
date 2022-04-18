@@ -49,12 +49,12 @@ const Navbar = () => {
             <div className="hidden md:flex">
 
               <a 
-                  href={process.env.NEXT_PUBLIC_NAVBAR_WALLET_LINK} 
-                  className="px-6 transition hover:scale-105 cursor-pointer bg-primary py-2.5 text-center uppercase text-secondary buttonShape text-[12px] font-normal"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Log in
+                href={process.env.NEXT_PUBLIC_NAVBAR_WALLET_LINK} 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 transition hover:scale-105 cursor-pointer bg-primary py-2.5 text-center uppercase text-secondary buttonShape text-[12px] font-normal"
+              >
+                {process.env.NEXT_PUBLIC_NAVBAR_WALLET_TEXT}
               </a>
 
             </div>
@@ -63,13 +63,16 @@ const Navbar = () => {
               <MenuHamburger />
             </div> */}
 
-            <div className="flex md:hidden max-w-max" onClick={handleOpenCloseMenu}>
+            <div className="flex md:hidden max-w-max">
 
-              <p 
-                  className="px-6 transition hover:scale-105 cursor-pointer bg-primary py-2.5 text-center uppercase text-secondary buttonShape text-[12px] font-normal"
+              <a
+                href={process.env.NEXT_PUBLIC_NAVBAR_WALLET_LINK} 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 transition hover:scale-105 cursor-pointer bg-primary py-2.5 text-center uppercase text-secondary buttonShape text-[12px] font-normal"
                 >
-                  Log in
-              </p>
+                  {process.env.NEXT_PUBLIC_NAVBAR_WALLET_TEXT}
+              </a>
 
             </div>
 
@@ -79,7 +82,7 @@ const Navbar = () => {
 
       </nav>
 
-      <div className={`fixed flex flex-col md:hidden top-0 z-50 h-screen bg-red w-screen bg-black transition ${menuOpen ? "translate-x-0" : "translate-x-full" } `}>
+      {/* <div className={`fixed flex flex-col md:hidden top-0 z-50 h-screen bg-red w-screen bg-black transition ${menuOpen ? "translate-x-0" : "translate-x-full" } `}>
 
         <div className="pt-6 mb-[70px] px-5 w-full flex items-center justify-between">
 
@@ -117,7 +120,7 @@ const Navbar = () => {
 
 
 
-      </div>
+      </div> */}
 
     </>
 
