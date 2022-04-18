@@ -223,9 +223,9 @@ function CustomProductViewer({ product }) {
 
       <section className='w-full flex flex-col items-start'>
 
-        <div className={`flex w-full justify-between border-standard ${saleTypeStatus == "liveAt"? "liveActionColor" : ""}  ${saleTypeStatus == "closeUp" ? "closeUP text-white" : ""} rounded-lg my-5 border-2 px-2 space-x-2`}>
+        <div className={`flex w-full items-center py-2 justify-between border-standard ${saleTypeStatus == "liveAt"? "liveActionColor" : ""}  ${saleTypeStatus == "closeUp" ? "closeUP text-white" : ""} rounded-lg my-5 border-2 px-2 space-x-2`}>
 
-          <p className='flex items-center'>
+          <p className='flex text-xs font-black leading-[14.4px] items-center'>
 
             {
               saleType != "Auction" || saleTypeStatus == "normal"  ? (
@@ -255,7 +255,7 @@ function CustomProductViewer({ product }) {
             
           </p>
 
-          <p>
+          <p className="text-xs font-medium leading-[14.4px] text-right">
             {
               saleType === "Auction" || saleType === "Open edition"  ? (
 
@@ -275,13 +275,13 @@ function CustomProductViewer({ product }) {
 
         <div className='w-full flex flex-col space-y-5 items-start'>
 
-          <h2 className="text-xl leading-[1.15] font-bold ">
+          <h2 className="text-lg leading-[21px] font-medium ">
             <Link href={productInfo?.purchaseLink}>
               {productInfo?.tokenMetadata?.name}
             </Link>
           </h2>
 
-          <h3>
+          <h3 className="text-sm">
             <Link passHref href={`https://www.bitski.com/${productInfo?.username}`}>
 
               <a className='flex items-center space-x-2'>
@@ -302,7 +302,7 @@ function CustomProductViewer({ product }) {
             </Link>
           </h3>
 
-          <p className='font-bold text-[1.125rem]'>
+          <p className='font-medium text-lg leading-[22px]'>
 
             {
               saleType !== "Auction" ? (

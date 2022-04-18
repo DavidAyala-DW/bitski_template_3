@@ -104,14 +104,14 @@ const Hero = () => {
 
         </div>
 
-        <div className="md:absolute inset-0 w-full h-full items-center flex flex-col justify-start pt-16 lg:pt-[120px] z-20">
+        <div className="md:absolute inset-0 w-full h-full items-center flex flex-col justify-start pt-16 lg:pt-[119px] z-20">
 
           <div className="w-full flex mb-10 min-h-[58.8px] justify-center ">
 
             {
               isLoadImage && (
                 
-                <div className="max-w-[150px] w-full">
+                <div className="max-w-[120px] md:max-w-[150px] w-full">
 
                   <Image
                     src={logoFileName}
@@ -128,11 +128,11 @@ const Hero = () => {
             
           </div>
 
-            <h1 className="max-w-[673px] font-extrabold px-1 md:px-0 w-full text-5xl md:text-[51px] text-center mb-7">
+            <h1 className="max-w-[955px] font-black px-1 md:px-0 w-full text-[52px] leading-[100%] md:text-[64px] md:leading-[64px] text-center mb-7">
               {title}
             </h1>
 
-            <p className="max-w-[647px] w-full text-center text-xl leading-9 ">
+            <p className="max-w-[630px] font-medium w-full text-center text-base leading-[160%] md:leading-[25px] ">
               {description}
             </p>
 
