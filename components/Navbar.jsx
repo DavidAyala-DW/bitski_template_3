@@ -40,7 +40,7 @@ const Navbar = () => {
 
     <>
 
-      <nav className="fixed z-40 md:absolute top-0 bg-transparent w-full pt-5 lg:pt-0 h-auto lg:h-[76px] flex flex-col justify-center items-center">
+      <nav className="fixed z-40 top-0 bg-transparent w-full pt-5 lg:pt-0 h-auto lg:h-[76px] flex flex-col justify-center items-center">
 
         <div className="max-w-[1440px] w-full px-5 md:px-20 flex items-center md:justify-end">
 
@@ -50,17 +50,27 @@ const Navbar = () => {
 
               <a 
                   href={process.env.NEXT_PUBLIC_NAVBAR_WALLET_LINK} 
-                  className="px-6 transition hover:scale-105 cursor-pointer bg-primary py-2.5 text-center uppercase text-secondary buttonShape text-[11px] font-medium"
+                  className="px-6 transition hover:scale-105 cursor-pointer bg-primary py-2.5 text-center uppercase text-secondary buttonShape text-[12px] font-normal"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {process.env.NEXT_PUBLIC_NAVBAR_WALLET_TEXT}
+                  Log in
               </a>
 
             </div>
 
-            <div className="flex md:hidden max-w-max" onClick={handleOpenCloseMenu} >
+            {/* <div className="hidden max-w-max" onClick={handleOpenCloseMenu} >
               <MenuHamburger />
+            </div> */}
+
+            <div className="flex md:hidden max-w-max" onClick={handleOpenCloseMenu}>
+
+              <p 
+                  className="px-6 transition hover:scale-105 cursor-pointer bg-primary py-2.5 text-center uppercase text-secondary buttonShape text-[12px] font-normal"
+                >
+                  Log in
+              </p>
+
             </div>
 
           </div>

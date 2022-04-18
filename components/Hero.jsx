@@ -93,7 +93,7 @@ const Hero = () => {
                 <HeroGridDesktop className="stroke-primary w-full !h-max opacity-30" />
                 // <FooterGrid className="stroke-primary w-full !h-max opacity-30" />
               )
-              
+
             }
 
             
@@ -104,7 +104,7 @@ const Hero = () => {
 
         </div>
 
-        <div className="md:absolute inset-0 w-full h-full items-center flex flex-col justify-start pt-12 lg:pt-[120px] z-20">
+        <div className="md:absolute inset-0 w-full h-full items-center flex flex-col justify-start pt-16 lg:pt-[120px] z-20">
           {
             isLoadImage && (
               
