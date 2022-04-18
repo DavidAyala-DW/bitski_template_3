@@ -12,7 +12,7 @@ function CustomProductViewer({ product }) {
   const [inventory, setInventory] = useState("");
   const [saleTypeStatus, setSaleTypeStatus] = useState("normal");
 
-  console.log(productInfo?.tokenMetadata?.image);
+  console.log( (productInfo?.tokenMetadata?.image).split("/")[(productInfo?.tokenMetadata?.image).split("/").length - 1] );
 
   const handleCountDown = function (salesEndAt){
 
@@ -85,6 +85,17 @@ function CustomProductViewer({ product }) {
 
     return lastPrice[0].amount;
   
+  }
+
+  function getOptimizedImage(url,width,height){
+
+    const splitUrl = url.split('/');
+    const domain =  "https://cdn.bitskistatic.com/cdn-cgi/image/";
+    const settings = `width=${width},height=${height},quality=100,fit=cover,onerror=redirect,f=auto/tokens-raw/`
+    const token = splitUrl[splitUrl.length - 2]+"/"+splitUrl[splitUrl.length - 1];
+    return domain + settings + token;
+
+    
   }
 
   useEffect( () => {
@@ -188,7 +199,7 @@ function CustomProductViewer({ product }) {
                   <div className='w-full h-full '>
                     <Image
                       className='object-cover h-full w-full object-center rounded-xl'
-                      src={productInfo?.tokenMetadata?.image}
+                      src={ getOptimizedImage(productInfo?.tokenMetadata?.image,608,608) }
                       alt={productInfo?.tokenMetadata?.title}
                       layout="responsive"
                       height={608}
