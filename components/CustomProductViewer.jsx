@@ -275,13 +275,13 @@ function CustomProductViewer({ product }) {
 
         <div className='w-full flex flex-col space-y-5 items-start'>
 
-          <h2 className="text-lg leading-[21px] font-medium ">
+          <h2 className="text-lg leading-[21px] font-medium uppercase">
             <Link href={productInfo?.purchaseLink}>
               {productInfo?.tokenMetadata?.name}
             </Link>
           </h2>
 
-          <h3 className="text-sm">
+          {/* <h3 className="text-sm">
             <Link passHref href={`https://www.bitski.com/${productInfo?.username}`}>
 
               <a className='flex items-center space-x-2'>
@@ -300,7 +300,7 @@ function CustomProductViewer({ product }) {
               </a>
 
             </Link>
-          </h3>
+          </h3> */}
 
           <p className='font-medium text-lg leading-[22px]'>
 

@@ -7,9 +7,9 @@ const Footer = () => {
   return (
     <>
       
-      <footer className="pt-20 pb-[45px] md:pb-[107px]  md:pt-0 bg-standardO text-standard mx-auto flex w-full items-center justify-center space-x-5">
+      <footer className="pt-20 pb-[45px] md:pb-[107px]  md:pt-0 bg-standardO text-standard mx-auto flex w-full items-center justify-center space-x-3">
 
-        <p className="uppercase tracking-[.16em] text-[11px] font-medium">Powered By</p>
+        <p className="uppercase tracking-[.36em] text-[11px] font-medium">Powered By</p>
 
         <a className="block" href="https://www.bitski.com/" target="_blank" rel="noopener noreferrer">
           <Bitski className="filter_logo_footer" />
