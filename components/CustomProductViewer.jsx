@@ -12,6 +12,8 @@ function CustomProductViewer({ product }) {
   const [inventory, setInventory] = useState("");
   const [saleTypeStatus, setSaleTypeStatus] = useState("normal");
 
+  console.log( (productInfo?.tokenMetadata?.image).split("/")[(productInfo?.tokenMetadata?.image).split("/").length - 1] );
+
   const handleCountDown = function (salesEndAt){
 
     const lastDate = new Date(salesEndAt).getTime();
@@ -83,6 +85,17 @@ function CustomProductViewer({ product }) {
 
     return lastPrice[0].amount;
   
+  }
+
+  function getOptimizedImage(url,width,height){
+
+    const splitUrl = url.split('/');
+    const domain =  "https://cdn.bitskistatic.com/cdn-cgi/image/";
+    const settings = `width=${width},height=${height},quality=100,fit=cover,onerror=redirect,f=auto/tokens-raw/`
+    const token = splitUrl[splitUrl.length - 2]+"/"+splitUrl[splitUrl.length - 1];
+    return domain + settings + token;
+
+    
   }
 
   useEffect( () => {
@@ -162,11 +175,11 @@ function CustomProductViewer({ product }) {
 
       <Link href={productInfo?.purchaseLink} passHref>
         
-        <a className='w-full relative pb-[calc(100%*1)] max-h-[312px]'>
+        <a className='w-full relative pb-[calc(100%*1)]'>
 
           <div className="absolute inset-0 w-full flex flex-col justify-center items-center">
 
-            <div className='relative shadow-2xl w-full h-full flex max-h-full justify-center max-w-full transition-transform duration-200 ease-[ease-in-out] md:hover:scale-105 w-[608px]'>
+            <div className='relative shadow-2xl h-full w-full flex max-h-full justify-center max-w-full transition-transform duration-200 ease-[ease-in-out] md:hover:scale-105'>
 
               {
                 productInfo?.tokenMetadata?.animation_url != undefined ? (
@@ -183,14 +196,18 @@ function CustomProductViewer({ product }) {
 
                 (
 
-                  <Image
-                    className='object-cover h-full w-full object-center rounded-xl'
-                    src={productInfo?.tokenMetadata?.image}
-                    alt={productInfo?.tokenMetadata?.title}
-                    layout="fill"
-                    quality={100}
-                    priority={true}
-                  />
+                  <div className='w-full h-full '>
+                    <Image
+                      className='object-cover h-full w-full object-center rounded-xl'
+                      src={ getOptimizedImage(productInfo?.tokenMetadata?.image,608,608) }
+                      alt={productInfo?.tokenMetadata?.title}
+                      layout="responsive"
+                      height={608}
+                      width={608}
+                      quality={100}
+                      priority={true}
+                    />
+                  </div>
 
                 )
 

@@ -37,6 +37,15 @@ const Home = ({featuredProduct,products}) => {
   );
 
 };
+// export const getStaticProps = async (ctx) => {
+
+
+//   return {
+//     props:{
+//       data:null
+//     }
+//   }
+// }
 
 export const getServerSideProps = async () => {
 
