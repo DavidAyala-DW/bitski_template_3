@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import Image from "next/image";
 import HeroGridDesktop from "../public/hero_grid.svg";
-import HeroGridMobile from "../public/footer_grid.svg";
+import HeroGridMobile from "../public/grid_footer.svg";
 
 
 const title = process.env.NEXT_PUBLIC_HERO_TITLE ?? "";
@@ -71,18 +71,18 @@ const Hero = () => {
   return (
     <>
 
-      <section className="md:h-[520px] w-full mx-auto flex flex-col justify-center items-center  px-5 md:px-20 relative pb-20  overflow-hidden">
+      <section className="md:h-[520px] w-full mx-auto flex flex-col justify-center items-center  px-5 md:px-20 relative pb-20">
 
         <div className="absolute inset-0 w-full h-full max-h-full">
     
           <div className="relative w-full h-full max-h-full">
 
-          <div className="absolute top-0 right-0 w-max h-max md:ml-auto transition translate-x-[70%] md:translate-x-0 md:translate-y-[-15px]">  
+          <div className="absolute top-0 right-0 w-max h-max ml-auto md:ml-auto transition md:translate-y-[-15px]">  
 
             {
 
               !viewportDesktop && (
-                <HeroGridMobile className="stroke-primary w-full !h-max opacity-30" />
+                <HeroGridMobile className="stroke-primary w-full !h-max opacity-20" />
               )
               
             }
