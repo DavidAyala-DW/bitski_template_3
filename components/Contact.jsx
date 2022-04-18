@@ -11,11 +11,9 @@ const description = process.env.NEXT_PUBLIC_CONTACT_DESCRIPTION ?? "";
 
 function Contact() {
 
-
-
   return (
 
-    <section className='px-5 md:px-0 pb-10 lg:pb-[170px] mx-auto w-full h-full lg:min-h-full relative overflow-hidden flex flex-col items-center bg-standardO '>
+    <section className='px-5 md:px-0 pt-2 pb-10 lg:pb-[170px] mx-auto w-full h-full lg:min-h-full relative overflow-hidden flex flex-col items-center bg-standardO '>
 
       <div className="max-w-[1440px] w-full h-full mx-auto flex flex-col items-center">
 
@@ -32,7 +30,7 @@ function Contact() {
                 
                 return(
 
-                  <a className="block" rel="noreferrer" target={"_blank"} href={URL} key={index}>
+                  <a className="block md:hover:scale-125 transition" rel="noreferrer" target={"_blank"} href={URL} key={index}>
                     <Icon className="fill-primary" />
                   </a>
                   
