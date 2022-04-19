@@ -132,7 +132,7 @@ const Hero = () => {
               {title}
             </h1>
 
-            <p className="max-w-[630px] font-medium w-full text-center text-base leading-[160%] md:leading-[25px] ">
+            <p className="max-w-[641px] font-medium w-full text-center text-base leading-[160%] md:leading-[25px] ">
               {description}
             </p>
 
