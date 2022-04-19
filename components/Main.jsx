@@ -28,7 +28,7 @@ function Main({featuredProduct}) {
       setProduct(product);
       console.log("change product");
 
-    },30*1000)
+    },120*1000)
 
     return () => clearInterval(interval);
 
