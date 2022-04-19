@@ -12,8 +12,6 @@ function CustomProductViewer({ product }) {
   const [inventory, setInventory] = useState("");
   const [saleTypeStatus, setSaleTypeStatus] = useState("normal");
 
-  console.log( (productInfo?.tokenMetadata?.image).split("/")[(productInfo?.tokenMetadata?.image).split("/").length - 1] );
-
   const handleCountDown = function (salesEndAt){
 
     const lastDate = new Date(salesEndAt).getTime();
