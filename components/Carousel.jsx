@@ -42,9 +42,13 @@ function Carousel() {
               slidesPerView: "auto",
               spaceBetween: 8
             },
+            420: {
+              slidesPerView: "auto",
+              spaceBetween: 8
+            },
             480: {
               slidesPerView: "auto",
-              spaceBetween: 40
+              spaceBetween: 20
             },
             560: {
               slidesPerView: "auto",
@@ -81,25 +85,11 @@ function Carousel() {
                   };
                 }
 
-                if (!String.prototype.replaceAll) {
-                  String.prototype.replaceAll = function(str, newStr){
-                
-                    // If a regex pattern
-                    if (Object.prototype.toString.call(str).toLowerCase() === '[object regexp]') {
-                      return this.replace(str, newStr);
-                    }
-                
-                    // If a string
-                    return this.replace(new RegExp(str, 'g'), newStr);
-                
-                  };
-                }
-
                 const image = item.toString().trim().replaceAll("'","").replaceAll('"',"");
 
                 return (
                   
-                  <SwiperSlide className='flex w-full flex-col h-full justify-center max-w-[343px] md:max-w-[400px]' key={hash(image)}>
+                  <SwiperSlide className='flex flex-col h-full justify-center !w-[calc(100vw-32px)]  max-w-[388px] md:max-w-[400px]' key={hash(image)}>
                     {
                       (
                         <div className='w-full h-full relative pb-[calc(100%*1)] max-h-[400px]' >
