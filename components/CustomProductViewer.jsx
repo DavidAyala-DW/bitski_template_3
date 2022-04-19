@@ -173,7 +173,7 @@ function CustomProductViewer({ product }) {
 
       <Link href={productInfo?.purchaseLink} passHref>
         
-        <a className='w-full relative pb-[calc(100%*1)]'>
+        <a rel="noreferrer" target={"_blank"} href={productInfo?.purchaseLink} className='w-full relative pb-[calc(100%*1)]'>
 
           <div className="absolute inset-0 w-full flex flex-col justify-center items-center">
 
@@ -275,7 +275,9 @@ function CustomProductViewer({ product }) {
 
           <h2 className="text-lg leading-[21px] font-medium uppercase">
             <Link href={productInfo?.purchaseLink}>
-              {productInfo?.tokenMetadata?.name}
+              <a rel="noreferrer" target={"_blank"} href={productInfo?.purchaseLink}>
+                {productInfo?.tokenMetadata?.name}
+              </a>
             </Link>
           </h2>
 
