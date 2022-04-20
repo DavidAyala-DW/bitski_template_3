@@ -111,8 +111,7 @@ const Hero = () => {
             {
               isLoadImage && (
                 
-                <div className="max-w-[120px] md:max-w-[150px] w-full">
-
+                <a className="max-w-[120px] md:max-w-[150px] w-full block" target="_blank" href="nft.pwrfwd.co" rel="noopener noreferrer">
                   <Image
                     src={logoFileName}
                     priority={true}
@@ -121,7 +120,7 @@ const Hero = () => {
                     height={height}
                   />  
 
-                </div>
+                </a>
 
               )
             }
