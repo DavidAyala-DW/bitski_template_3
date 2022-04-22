@@ -53,10 +53,20 @@ export const getServerSideProps = async () => {
 
   async function featuredProduct(){
 
-    const res = await fetch(endpoint.toString().concat(`/${process.env.NEXT_PUBLIC_MAIN_FEATURED_PRODUCT ?? "2096389b-aa71-4f03-9cd0-242d6050e964" }`));
-    const response = await res.json();
-    const {product:featured_product} = response;
-    return featured_product;
+    try {
+      const res = await fetch(endpoint.toString().concat(`/${process.env.NEXT_PUBLIC_MAIN_FEATURED_PRODUCT ?? "2096389b-aa71-4f03-9cd0-242d6050e964" }`));
+      console.log(res);
+      const response = await res.json();
+      console.log(response);
+      const {product:featured_product} = response;
+      console.log(featured_product);
+      return featured_product;      
+
+    } catch (error) {
+        return {};
+    }
+
+
 
   }
 
@@ -121,13 +131,26 @@ export const getServerSideProps = async () => {
     return allResponses;
     
   }
+    
+  if(process.env.NEXT_PUBLIC_MAIN_FEATURED_PRODUCT){
 
-  const [featured_product] = await Promise.all([featuredProduct()]);
-  return {
-    props: {
-      featuredProduct: featured_product
-    },
-  };
+    const [featured_product] = await Promise.all([featuredProduct()]);
+    return {
+      props: {
+        featuredProduct: featured_product
+      },
+    };
+
+  }else{
+    return {
+      props: {
+        featuredProduct: {}
+      },
+    };
+  }
+  
+
+
 
 };
 
