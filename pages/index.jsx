@@ -54,13 +54,20 @@ export const getServerSideProps = async () => {
   async function featuredProduct(){
 
     try {
+
       const res = await fetch(endpoint.toString().concat(`/${process.env.NEXT_PUBLIC_MAIN_FEATURED_PRODUCT ?? "2096389b-aa71-4f03-9cd0-242d6050e964" }`));
-      console.log(res);
       const response = await res.json();
       console.log(response);
-      const {product:featured_product} = response;
-      console.log(featured_product);
-      return featured_product;      
+  
+      const {error} = response;
+      if(error){
+        return {};
+      }else{
+        const {product:featured_product} = response;
+        return featured_product;      
+      }
+      // console.log(featured_product);
+      
 
     } catch (error) {
         return {};
